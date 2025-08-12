@@ -1,0 +1,43 @@
+---
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
+import { Textarea } from "@/components/ui/textarea"
+import {Button} from "@/components/ui/button"
+
+import logo from "@/assets/images/logo/SCLogisticsPNG.png";
+---
+
+<section class="mt-0 w-full flex flex-col items-start justify-center px-4 py-6 relative overflow-hidden">
+  
+  <section class="mt-0 w-full flex-col justify-end px-3 md:flex md:flex-row-reverse pb-6 md:gap-4 md:my-12 md:ml-48" id="contact">
+    <div class="relative mt-4 z-20">
+      <h2 class="font-heading font-extrabold text-5xl text-white text-center break-normal opacity-15 md:text-left md:text-6xl"> Contáctanos </h2>
+      <h4 class="font-heading font-bold text-4xl text-white text-center absolute inset-x-0 bottom-0 md:text-left md:text-5xl md:absolute md:left-12 md:bottom-0"> Contáctanos </h4>
+    </div>
+  </section>
+  
+  
+  <div class="absolute z-5 w-1/3 h-full left-0 overflow-hidden md:w-1/4 md:h-full bg-primary"></div>
+  <div class="absolute z-5 w-1/2 h-full rotate-25 left-5 overflow-hidden md:w-1/2 md:h-full md:rotate-30 bg-primary"></div>
+  <div class="absolute z-0 w-7/12 h-full rotate-30 md:w-7/12 md:h-full md:rotate-25 bg-primary-accent"></div>
+  <img src={logo.src} alt="" class="transition-all fade-in-50 duration-500 h-0 md:h-0 lg:h-full z-10 absolute right-0 overflow-hidden drop-shadow-2xl/50"/>
+
+  <!-- Form Section -->
+  <div class="w-full max-w-2xl bg-white/90 backdrop-blur-sm rounded-xl shadow-lg p-6 md:ml-15 md:p-8 md:relative z-20 md:z-20">
+    <form method="post" class="flex flex-col gap-4">
+      <Label htmlFor="name">Nombre Completo</Label>
+      <Input placeholder="Ingrese su nombre completo" id="name" />
+
+      <Label htmlFor="email">Correo Electrónico</Label>
+      <Input placeholder="e.g. micorreo@gmail.com" id="email" /> 
+
+      <Label htmlFor="description">Mensaje</Label>
+      <Textarea id="description" />
+      
+      <Button type="submit" size={"lg"} className="font-principal hover:cursor-pointer hover:bg-secondary/85 bg-secondary text-black">Enviar</Button>
+    </form>
+  </div>
+
+</section>
+
+

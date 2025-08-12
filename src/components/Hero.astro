@@ -1,0 +1,23 @@
+---
+import vehicle from "@/assets/images/hero/vehicle-road.webp"
+import { Button } from "@/components/ui/button"
+---
+<section class="h-auto w-full mb-0 transition delay-150 duration-700 ease-in bg-[url(./../assets/images/hero/Vector1.webp)] bg-contain bg-no-repeat bg-top-left">
+  <div class="flex flex-col items-center justify-center md:flex-row">
+    <div class="h-auto m-4 p-6 rounded-2xl  md:w-auto md:h-full ">
+      <p class="mb-1.5 font-heading transition-all ease-in duration-200 font-semibold text-md uppercase text-black md:text-xl">Crecemos contigo, kilómetro a kilómetro</p>
+      <h1 class="mb-1.5 font-heading font-bold text-2xl uppercase md:text-3xl lg:text-4xl"> Movemos tu negocio con fuerza y compromiso </h1>
+      <p 
+        class="font-principal font-normal mt-2.5 md:text-lg">
+        Nuestra misión es ofrecer soluciones confiables, ágiles y personalizadas para pequeñas y medianas empresas que necesitan llevar su carga a tiempo y en buenas manos.
+      </p>
+      <Button variant={"secondary"} size={"lg"} className="font-principal mt-4">
+        <a href="/">Contáctanos</a>
+      </Button> 
+    </div>
+    <div class="w-full h-full items-center transition-all ease-out duration-700 mask-b-from-50% mask-b-to-90% md:mask-b-from-100% md:mask-l-from-50% md:mask-l-to-100% mt-0  md:w-full md:h-full">
+      <img src={vehicle.src} alt="Transporte logistico SCLogistics" class="w-full h-96 object-cover transition-all ease-out duration-700 md:w-full md:h-[50%] md:object-cover">
+    </div>
+  </div>
+</section>
+
