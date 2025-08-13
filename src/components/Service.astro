@@ -1,12 +1,52 @@
 ---
-import service1 from "../assets/images/services/service1.webp";
+import service1 from "@/assets/images/services/service1.webp";
 import service2 from "@/assets/images/services/service2.webp";
 import service3 from "@/assets/images/services/service3.webp";
 import service4 from "@/assets/images/services/service4.webp";
 import bulbg from "@/assets/images/background/bg-blur-spheres.png";
 import { ModalService } from "./content/ModalService";
----
 
+interface ServiceContentProps {
+  title: string;
+  description: string;
+  image: string;
+  content: string;
+}
+
+interface TypesOfServices {
+  service1: ServiceContentProps; 
+  service2: ServiceContentProps; 
+  service3: ServiceContentProps; 
+  service4: ServiceContentProps; 
+}
+
+const services : TypesOfServices = {
+  service1: {
+    title: "Transporte de Carga General",
+    description: "Movilizamos mercancías de diferentes tipos y tamaños a lo largo del territorio nacional.",
+    image: service1.src,
+    content:"Nuestro servicio de transporte de carga general está diseñado para ofrecer a particulares y empresas la tranquilidad de que su mercancía llegará a destino en el tiempo acordado y en perfectas condiciones. Contamos con personal capacitado para el manejo y la estiba de la carga, así como rutas optimizadas para reducir costos y tiempos de entrega."
+  },
+  service2: {
+    title: "Servicio de Paquetería Express",
+    description: "Envíos rápidos y seguros para paquetes pequeños y medianos.",
+    image:service2.src,
+    content:"Pensado para clientes que necesitan soluciones inmediatas, este servicio garantiza la recolección y entrega de paquetes en el menor tiempo posible. Ideal para envíos urgentes, documentos, repuestos o productos que requieren llegar con rapidez y sin complicaciones."
+  },
+  service3: {
+    title: "Transporte para Negocios Locales",
+    description: "Soluciones de transporte adaptadas a pequeñas y medianas empresas.",
+    image:service3.src,
+    content:"Apoyamos a emprendedores y negocios en el traslado de sus productos desde sus puntos de venta o almacenes hasta sus clientes o sucursales. Ofrecemos opciones de transporte programado, tarifas preferenciales y seguimiento constante para asegurar la continuidad de sus operaciones."
+  },
+  service4: {
+    title: "Transporte de Eventos y Montajes",
+    description: "Traslado seguro de mobiliario, equipos y materiales para eventos.",
+    image:service4.src,
+    content:"Ofrecemos transporte especializado para ferias, exposiciones, conciertos y cualquier tipo de evento. Nos encargamos de movilizar mesas, sillas, tarimas, equipos de sonido, iluminación y más, asegurando que todo llegue a tiempo y en perfecto estado para el montaje."
+  }
+}
+---
 <section class="mt-0 w-full flex-col justify-center px-3 md:flex md:flex-row-reverse md:gap-4 md:my-12">
   <div class="relative mt-4">
     <h2
@@ -46,9 +86,10 @@ import { ModalService } from "./content/ModalService";
         <!-- Heading (on top) -->
         <div class="absolute inset-0 flex items-center justify-center z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out font-heading font-bold text-white drop-shadow-lg text-5xl p-4 text-center">
           <ModalService 
-            title={"Transporte de Carga General"}
-            description={"Todo se puede"}
-            content={"Este servicio es el fkn mejor"}
+            title={services.service1.title}
+            description={services.service1.description}
+            image={services.service1.image}
+            content={services.service1.content}
             client:idle
           />
         </div>
@@ -73,9 +114,10 @@ import { ModalService } from "./content/ModalService";
           <!-- Heading (on top) -->
           <div class="absolute inset-0 flex items-center justify-center z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out font-heading font-bold text-white drop-shadow-lg text-5xl p-4 text-center">
             <ModalService 
-              title={"Transporte para Negocios Locales"}
-              description={"Todo se puede"}
-              content={"Este servicio es el fkn mejor"}
+              title={services.service2.title}
+              description={services.service2.description}
+              image={services.service2.image}
+              content={services.service2.content}
               client:idle
             />
           </div>
@@ -98,9 +140,10 @@ import { ModalService } from "./content/ModalService";
         <!-- Heading (on top) -->
         <div class="absolute inset-0 flex items-center justify-center z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out font-heading font-bold text-white drop-shadow-lg text-5xl p-4 text-center">
           <ModalService 
-            title={"Servicio de Paquetería Express"}
-            description={"Todo se puede"}
-            content={"Este servicio es el fkn mejor"}
+            title={services.service3.title}
+            description={services.service3.description}
+            image={services.service3.image}
+            content={services.service3.content}
             client:idle
           />
         </div>
@@ -123,9 +166,10 @@ import { ModalService } from "./content/ModalService";
         <!-- Heading (on top) -->
         <div class="absolute inset-0 flex items-center justify-center z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out font-heading font-bold text-white drop-shadow-lg text-5xl p-4 text-center">
           <ModalService 
-            title={"Transporte de Mudanzas Locales"}
-            description={"Traslado seguro y organizado de pertenencias y mobiliario dentro del país."}
-            content={"Este servicio es el fkn mejor"}
+            title={services.service4.title}
+            description={services.service4.description}
+            image={services.service4.image}
+            content={services.service4.content}
             client:idle
           />
         </div>
@@ -133,5 +177,3 @@ import { ModalService } from "./content/ModalService";
 
     </div>
   </section>
-
-
