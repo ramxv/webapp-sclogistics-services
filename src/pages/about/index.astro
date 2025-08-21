@@ -3,4 +3,178 @@ import Layout from "@/layouts/Layout.astro"
 ---
 
 <Layout>	
+
+<section class="min-h-screen bg-background text-foreground">
+  <!-- Hero -->
+  <header class="w-full bg-primary text-primary-foreground">
+    <div class="mx-auto max-w-7xl px-6 py-12 md:py-16">
+      <p class="text-xs tracking-widest uppercase opacity-80">Quiénes somos</p>
+      <h1 class="mt-2 text-3xl md:text-5xl font-heading font-bold">
+        Movemos carga, construimos confianza.
+      </h1>
+      <p class="mt-4 max-w-2xl opacity-90 font-principal">
+        En <strong>SCLogistics Services</strong> somos una empresa panameña de transporte terrestre
+        enfocada en entregas seguras, puntuales y transparentes para negocios y particulares.
+      </p>
+        <div class="mt-6 flex flex-wrap gap-3 font-principal">
+        <a href="/services" class="inline-flex items-center justify-center rounded-md bg-secondary text-secondary-foreground hover:bg-secondary/90 px-5 py-3 text-sm font-medium">
+          Ver servicios
+        </a>
+        <a href="/#contact" class="inline-flex items-center justify-center rounded-md border border-border hover:bg-muted hover:text-black px-5 py-3 text-sm font-medium">
+          Contáctanos
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Nuestra historia / Qué hacemos -->
+  <section class="mx-auto max-w-7xl px-6 py-12 md:py-16 grid grid-cols-1 md:grid-cols-12 gap-10">
+    <div class="md:col-span-7 space-y-5">
+      <h2 class="text-2xl md:text-3xl font-heading font-bold">Nuestra historia</h2>
+      <p class="leading-relaxed font-principal">
+        Nacimos con una idea simple: que el transporte local puede ser cercano, claro y confiable.
+        Empezamos con una flota pequeña y un equipo comprometido con dar seguimiento real y comunicación directa
+        en cada envío. Crecemos contigo, priorizando la seguridad y el cuidado de tu mercancía.
+      </p>
+      <h3 class="pt-4 text-xl font-heading font-semibold">Qué resolvemos</h3>
+      <ul class="list-disc pl-5 space-y-2 font-principal">
+        <li>Retiro y entrega puntual con rutas optimizadas.</li>
+        <li>Manejo responsable de carga general y paquetes.</li>
+        <li>Soporte a negocios locales con entregas programadas.</li>
+        <li>Comunicación transparente durante todo el trayecto.</li>
+      </ul>
+    </div>
+
+    <!-- Tarjeta lateral (datos rápidos) -->
+    <aside class="md:col-span-5">
+      <div class="rounded-2xl border border-border bg-card p-6 shadow-sm">
+        <h3 class="text-lg font-heading font-semibold">En números</h3>
+        <dl class="mt-4 grid grid-cols-2 gap-4 text-sm">
+          <div class="rounded-lg bg-muted p-4">
+            <dt class="opacity-70">Cobertura</dt>
+            <dd class="mt-1 font-semibold">Panamá (nacional)</dd>
+          </div>
+          <div class="rounded-lg bg-muted p-4">
+            <dt class="opacity-70">Puntualidad</dt>
+            <dd class="mt-1 font-semibold"> 95% en ventana</dd>
+          </div>
+          <div class="rounded-lg bg-muted p-4">
+            <dt class="opacity-70">Soporte</dt>
+            <dd class="mt-1 font-semibold">WhatsApp &amp; email</dd>
+          </div>
+          <div class="rounded-lg bg-muted p-4">
+            <dt class="opacity-70">Enfoque</dt>
+            <dd class="mt-1 font-semibold">PYMES &amp; particulares</dd>
+          </div>
+        </dl>
+        <div class="mt-6">
+          <a href="https://wa.me/50766318383" class="inline-flex w-full items-center justify-center rounded-md bg-secondary text-secondary-foreground hover:bg-secondary/90 px-4 py-2 text-sm font-medium font-principal">
+            Escríbenos por WhatsApp
+          </a>
+        </div>
+      </div>
+    </aside>
+  </section>
+
+  <!-- Misión, Visión, Valores -->
+  <section class="mx-auto max-w-7xl px-6 pb-12 md:pb-16">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="rounded-2xl border border-border bg-card p-6">
+        <h3 class="text-xl font-heading font-semibold">Misión</h3>
+        <p class="mt-2 text-sm leading-relaxed font-principal">
+          Ofrecer soluciones de transporte confiables y accesibles, cuidando cada entrega como si fuera propia y
+          manteniendo una comunicación clara en todo momento.
+        </p>
+      </div>
+      <div class="rounded-2xl border border-border bg-card p-6">
+        <h3 class="text-xl font-heading font-semibold">Visión</h3>
+        <p class="mt-2 text-sm leading-relaxed font-principal">
+          Ser el aliado logístico preferido por negocios locales en Panamá, creciendo de forma sostenible con
+          procesos simples y tecnología útil.
+        </p>
+      </div>
+      <div class="rounded-2xl border border-border bg-card p-6">
+        <h3 class="text-xl font-heading font-semibold">Valores</h3>
+        <ul class="mt-2 text-sm space-y-2 font-principal">
+          <li><strong>Confianza:</strong> cumplimos lo que prometemos.</li>
+          <li><strong>Puntualidad:</strong> respetamos tus tiempos.</li>
+          <li><strong>Cuidado:</strong> protegemos tu carga.</li>
+          <li><strong>Transparencia:</strong> comunicación directa y honesta.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cómo trabajamos (proceso simple) -->
+  <section class="mx-auto max-w-7xl px-6 pb-12 md:pb-16">
+    <h2 class="text-2xl md:text-3xl font-heading font-bold">Cómo trabajamos</h2>
+    <div class="mt-6 grid grid-cols-1 md:grid-cols-4 gap-6">
+      <div class="rounded-xl border border-border p-5">
+        <p class="text-xs uppercase tracking-wide text-muted-foreground">01</p>
+        <h4 class="mt-1 font-heading font-semibold">Solicitud</h4>
+        <p class="mt-2 text-sm font-principal">Nos contactas con origen, destino y tipo de carga.</p>
+      </div>
+      <div class="rounded-xl border border-border p-5">
+        <p class="text-xs uppercase tracking-wide text-muted-foreground">02</p>
+        <h4 class="mt-1 font-heading font-semibold">Confirmación</h4>
+        <p class="mt-2 text-sm font-principal">Acordamos ventana de retiro y entrega.</p>
+      </div>
+      <div class="rounded-xl border border-border p-5">
+        <p class="text-xs uppercase tracking-wide text-muted-foreground">03</p>
+        <h4 class="mt-1 font-heading font-semibold">Transporte</h4>
+        <p class="mt-2 text-sm font-principal">Seguimiento y comunicación durante el traslado.</p>
+      </div>
+      <div class="rounded-xl border border-border p-5">
+        <p class="text-xs uppercase tracking-wide text-muted-foreground">04</p>
+        <h4 class="mt-1 font-heading font-semibold">Entrega</h4>
+        <p class="mt-2 text-sm font-principal">Comprobación y cierre con retroalimentación.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mini grid de servicios (resumen con links) -->
+  <section class="mx-auto max-w-7xl px-6 pb-12 md:pb-16">
+    <h2 class="text-2xl md:text-3xl font-heading font-bold">Lo que ofrecemos</h2>
+    <div class="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <a href="/services#carga-general" class="group rounded-xl border border-border p-5 hover:bg-muted transition">
+        <h4 class="font-heading font-semibold">Transporte de Carga General</h4>
+        <p class="mt-2 text-sm opacity-80 font-principal">Entregas seguras y puntuales a nivel nacional.</p>
+        <span class="mt-3 inline-block text-xs opacity-70 group-hover:opacity-100">Ver más →</span>
+      </a>
+      <a href="/services#paqueteria-express" class="group rounded-xl border border-border p-5 hover:bg-muted transition">
+        <h4 class="font-heading font-semibold">Paquetería Express</h4>
+        <p class="mt-2 text-sm opacity-80 font-principal">Para envíos urgentes y de tamaño pequeño/mediano.</p>
+        <span class="mt-3 inline-block text-xs opacity-70 group-hover:opacity-100">Ver más →</span>
+      </a>
+      <a href="/services#negocios-locales" class="group rounded-xl border border-border p-5 hover:bg-muted transition">
+        <h4 class="font-heading font-semibold">Transporte para Negocios</h4>
+        <p class="mt-2 text-sm opacity-80 font-principal">Entregas programadas y tarifas preferenciales.</p>
+        <span class="mt-3 inline-block text-xs opacity-70 group-hover:opacity-100">Ver más →</span>
+      </a>
+      <a href="/services#mudanzas-locales" class="group rounded-xl border border-border p-5 hover:bg-muted transition">
+        <h4 class="font-heading font-semibold">Mudanzas Locales</h4>
+        <p class="mt-2 text-sm opacity-80 font-principal">Hogares y oficinas con cuidado y puntualidad.</p>
+        <span class="mt-3 inline-block text-xs opacity-70 group-hover:opacity-100">Ver más →</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- CTA final -->
+  <section class="mx-auto max-w-7xl px-6 pb-16">
+    <div class="rounded-2xl border border-border bg-card p-6 md:p-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+      <div>
+        <h3 class="text-xl md:text-2xl font-heading font-bold">¿Listo para tu próximo envío?</h3>
+        <p class="mt-1 text-sm opacity-80 font-principal">Cuéntanos origen, destino y tipo de carga. Te respondemos rápido.</p>
+      </div>
+      <div class="flex gap-3 font-principal">
+        <a href="/#contact" class="inline-flex items-center justify-center rounded-md bg-secondary text-secondary-foreground hover:bg-secondary/90 px-5 py-3 text-sm font-medium">
+          Solicitar cotización
+        </a>
+        <a href="mailto:sclogisticservices@gmail.com" class="inline-flex items-center justify-center rounded-md border border-border hover:bg-muted px-5 py-3 text-sm font-medium">
+          sclogisticservices@gmail.com
+        </a>
+      </div>
+    </div>
+  </section>
+</section>
 </Layout>
