@@ -1,15 +1,12 @@
 ---
+import { Label } from "@/ui/label";
+import { Textarea } from "@/ui/textarea";
 import { actions } from "astro:actions";
-import { Form } from "./content/Form"
-
 import logo from "@/assets/images/logo/SCLogisticsPNG.png";
 import { isInputError } from "astro:actions";
 
 const result = Astro.getActionResult(actions.send);
-if (result?.data) {
-  return Astro.redirect("/#contact");
-}
-
+const inputError = isInputError(result?.error) ? result.error.fields : {};
 ---
 
 <section class="mt-0 w-full flex flex-col items-start justify-center px-4 py-6 relative overflow-hidden" id="contact">
@@ -28,9 +25,83 @@ if (result?.data) {
 
   <!-- Form Section -->
   <div class="w-full max-w-2xl bg-white/90 backdrop-blur-sm rounded-xl shadow-lg p-6 md:ml-15 md:p-8 md:relative z-20 md:z-20">
-    <Form/>
+    <form action={actions.send} method="POST" class="flex flex-col gap-4" >
+      <Label htmlFor="completeName">Nombre Completo</Label>
+      <input placeholder="e.g. Nombre Appellido" id="completeName" type="text" name="completeName" autocomplete="off" aria-describedby="error" />
+      {inputError.completeName && <p id="error" class="text-red-700">El nombre es obligatorio</p>}
+
+      <Label htmlFor="gmail">Correo Electrónico</Label>
+      <input placeholder="e.g. micorreo@gmail.com" id="gmail" type="email" name="gmail" autocomplete="off" aria-describedby="error" />
+      {inputError.gmail && <p id="error" class="text-red-700">El correo es obligatorio</p>}
+
+
+      <Label htmlFor="subjectDescription">Asunto</Label>
+      <input placeholder="e.g. Cotización de transporte" id="subjectDescription" type="text" name="subjectDescription" autocomplete="off" aria-describedby="error" />
+      {inputError.subjectDescription && <p id="error" class="text-red-700">El asunto es obligatorio</p>}
+
+      <Label htmlFor="description">Mensaje</Label>
+      <Textarea id="description" name="description" />
+      {inputError.description && <p id="error" class="text-red-700">El cuerpo del correo es obligatorio</p>}
+
+      <button class="font-principal hover:cursor-pointer hover:bg-secondary/85 bg-secondary text-black">Enviar</button>
+    </form>
+
   </div>
-  
+
+
 </section>
+
+{result && (
+  <script is:inline define:vars={{ result }}>
+    window.actionResult = result;
+  </script>
+)}
+
+<script>
+  import { toast } from "sonner";
+
+  // Use DOMContentLoaded for better compatibility
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', handleActionResult);
+  } else {
+    handleActionResult();
+  }
+
+  // Also listen for Astro page loads
+  document.addEventListener('astro:page-load', handleActionResult);
+
+  function handleActionResult() {
+    const actionResult = (window as any).actionResult;
+
+    // Always clean up the URL if it has action parameters
+    const url = new URL(window.location.href);
+    if (url.searchParams.has('_action')) {
+      url.searchParams.delete('_action');
+      window.history.replaceState({}, '', url.toString());
+    }
+
+    if (actionResult) {
+      if (actionResult.error) {
+        // Show validation errors as toast
+        if (actionResult.error.fields) {
+          const errors = Object.values(actionResult.error.fields).flat();
+          errors.forEach((error: any) => {
+            toast(error);
+          });
+        } else {
+          toast('Error al enviar el mensaje. Por favor, intenta de nuevo.');
+        }
+      } else {
+        toast('¡Mensaje enviado exitosamente!');
+        const form = document.querySelector('form');
+        if (form) {
+          form.reset();
+        }
+      }
+      // Clear the result to prevent showing again
+      delete (window as any).actionResult;
+    }
+  }
+</script>
 
 
