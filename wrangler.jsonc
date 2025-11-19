@@ -1,0 +1,19 @@
+{
+  "name": "sclogisticsservices",
+  "main": "./dist/_worker.js/index.js",
+
+  // pon la fecha de hoy
+  "compatibility_date": "2025-11-18",
+
+  // Node.js compatibility para el código que genera Astro
+  "compatibility_flags": ["nodejs_compat"],
+
+  "assets": {
+    "binding": "ASSETS",
+    "directory": "./dist",
+  },
+
+  "observability": {
+    "enabled": true,
+  },
+}
